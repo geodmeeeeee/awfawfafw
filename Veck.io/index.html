@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Veck.io</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-color: #0b0d14;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    #unity-container {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #0b0d14;
+    }
+    #unity-canvas {
+      width: 100% !important;
+      height: 100% !important;
+      outline: none;
+      display: block;
+    }
+    #unity-loading-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at center, #151923 0%, #0b0d14 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      z-index: 10;
+      transition: opacity 0.5s ease;
+    }
+    .logo {
+      max-width: 280px;
+      height: auto;
+      filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.6));
+    }
+    #loading-percentage {
+      color: #94a3b8;
+      font-size: 1.1rem;
+      font-weight: 600;
+      font-variant-numeric: tabular-nums;
+    }
+    #unity-loading-bar {
+      width: 260px;
+      height: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 9999px;
+      overflow: hidden;
+      box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
+    }
+    #unity-loading-bar-inner {
+      width: 0%;
+      height: 100%;
+      background: linear-gradient(90deg, #3b82f6, #60a5fa);
+      border-radius: 9999px;
+      transition: width 0.15s ease-out;
+    }
+  </style>
+  <script>
+    // 100% Ad-Free SDK Mock for Legion / Unity Games
+    window.ENABLE_ADS = false;
+    window.ADS_DEBUG = false;
+    window.bannerMapping = {};
+
+    window.SDK = {
+      _isInitialized: true,
+      _bannerAds: {},
+      _pendingBannerQueue: [],
+      loadingStart() {},
+      loadingEnd() {},
+      gameplayStart() {},
+      gameplayEnd() {},
+      SetBanner(type, pos) {
+        // Ads completely neutralized
+      },
+      showMidroll() {
+        if (typeof unityInstance !== 'undefined' && unityInstance) {
+          unityInstance.SendMessage("SDKManager", "OnVideoAdEnded", "true");
+        }
+      },
+      showRewarded() {
+        if (typeof unityInstance !== 'undefined' && unityInstance) {
+          unityInstance.SendMessage("SDKManager", "OnVideoAdEnded", "true");
+        }
+      },
+      getBuildURL() { return "Build"; },
+      getStreamingAssetsUrl() { return "StreamingAssets"; },
+      getStaticResolutionScaleMulti() { return 1.0; }
+    };
+  </script>
+</head>
+<body>
+  <div id="unity-container">
+    <canvas id="unity-canvas" tabindex="-1"></canvas>
+  </div>
+
+  <div id="unity-loading-container">
+    <img src="logo.webp" class="logo" alt="Veck.io Logo" />
+    <div id="loading-percentage">0%</div>
+    <div id="unity-loading-bar">
+      <div id="unity-loading-bar-inner"></div>
+    </div>
+  </div>
+
+  <script src="s/cursor.js"></script>
+  <script src="s/utils.js"></script>
+  <script src="Build/loader.js"></script>
+  <script>
+    const canvas = document.querySelector("#unity-canvas");
+    const loadingContainer = document.querySelector("#unity-loading-container");
+    const loadingBar = document.querySelector("#unity-loading-bar-inner");
+    const loadingPercentage = document.querySelector("#loading-percentage");
+
+    const config = {
+      dataUrl: "Build/data.unityweb",
+      frameworkUrl: "Build/framework.js",
+      codeUrl: "Build/wasm.wasm",
+      streamingAssetsUrl: "StreamingAssets",
+      companyName: "LEGiON Platforms",
+      productName: "Veck.io",
+      productVersion: "0.0.2464",
+      autoSyncPersistentDataPath: true,
+      devicePixelRatio: window.devicePixelRatio || 1.0,
+      showBanner: function(msg, type) {
+        console.log("[Unity Banner]", type, msg);
+      }
+    };
+
+    createUnityInstance(canvas, config, function(progress) {
+      const pct = Math.min(100, Math.round(progress * 100));
+      loadingBar.style.width = pct + "%";
+      loadingPercentage.textContent = pct + "%";
+    }).then(function(instance) {
+      window.unityInstance = instance;
+      loadingBar.style.width = "100%";
+      loadingPercentage.textContent = "100%";
+      setTimeout(function() {
+        loadingContainer.style.opacity = "0";
+        setTimeout(function() {
+          loadingContainer.style.display = "none";
+          canvas.focus();
+        }, 500);
+      }, 300);
+    }).catch(function(err) {
+      console.error("Failed to load Veck.io:", err);
+      loadingPercentage.textContent = "Failed to load game: " + err.message;
+    });
+
+    window.addEventListener("click", function() {
+      canvas.focus();
+    });
+  </script>
+</body>
+</html>
