@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-912D4ZR2HV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-912D4ZR2HV');
+</script>
+
+<!-- Robust Anti-Reload (Blocking Live Server) -->
+<script>
+(function() {
+    const block = (m) => console.log("Blocking reload attempt: " + m);
+    try {
+        // Simple override
+        window.location.reload = function() { block("location.reload"); };
+        window.history.go = function() { block("history.go"); };
+        window.location.replace = function() { block("location.replace"); };
+        
+        // Prevent meta refresh
+        const preventRefresh = () => {
+            const refresh = document.querySelector('meta[http-equiv="refresh"]');
+            if (refresh) {
+                console.log("Blocking meta refresh");
+                refresh.remove();
+            }
+        };
+        setInterval(preventRefresh, 1000);
+
+        // Block beforeunload popup if it exists
+        window.addEventListener('beforeunload', (event) => {
+            event.stopImmediatePropagation();
+        }, true);
+
+    } catch(e) { console.error("Reload fix error:", e); }
+})();
+</script>
+
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <link id="-gd-engine-icon" rel="icon" type="image/png" href="favicon.png" />
+    <script src="/js/main.js"></script>
+    <title>Kitchen Gun Game - Play Online for Free</title>
+    <meta name="description" content="Play Kitchen Gun Game online for free. Unblocked and available on all devices. Experience the best Kitchen Gun Game gameplay now!"> 
+    <meta name="author" content="HSINI">
+    <style type="text/css">
+      body {
+        touch-action: none;
+        margin: 0;
+        border: 0 none;
+        padding: 0;
+        text-align: center;
+        background-color: black;
+      }
+
+      #canvas {
+        display: block;
+        margin: 0;
+        color: white;
+      }
+
+      #canvas:focus {
+        outline: none;
+      }
+
+      .godot {
+        font-family: "Noto Sans", "Droid Sans", Arial, sans-serif;
+        color: #e0e0e0;
+        background-color: #3b3943;
+        background-image: linear-gradient(to bottom, #403e48, #35333c);
+        border: 1px solid #45434e;
+        box-shadow: 0 0 1px 1px #2f2d35;
+      }
+
+      /* Status display
+		 * ============== */
+
+      #status {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* don't consume click events - make children visible explicitly */
+        visibility: hidden;
+      }
+
+      #status-progress {
+        width: 366px;
+        height: 7px;
+        background-color: #38363a;
+        border: 1px solid #444246;
+        padding: 1px;
+        box-shadow: 0 0 2px 1px #1b1c22;
+        border-radius: 2px;
+        visibility: visible;
+      }
+
+      @media only screen and (orientation: portrait) {
+        #status-progress {
+          width: 61.8%;
+        }
+      }
+
+      #status-progress-inner {
+        height: 100%;
+        width: 0;
+        box-sizing: border-box;
+        transition: width 0.5s linear;
+        background-color: #202020;
+        border: 1px solid #222223;
+        box-shadow: 0 0 1px 1px #27282e;
+        border-radius: 3px;
+      }
+
+      #status-indeterminate {
+        visibility: visible;
+        position: relative;
+      }
+
+      #status-indeterminate > div {
+        width: 4.5px;
+        height: 0;
+        border-style: solid;
+        border-width: 9px 3px 0;
+        border-color: #2b2b2b transparent transparent;
+        transform-origin: center 21px;
+        position: absolute;
+      }
+
+      #status-indeterminate > div:nth-child(1) {
+        transform: rotate(22.5deg);
+      }
+      #status-indeterminate > div:nth-child(2) {
+        transform: rotate(67.5deg);
+      }
+      #status-indeterminate > div:nth-child(3) {
+        transform: rotate(112.5deg);
+      }
+      #status-indeterminate > div:nth-child(4) {
+        transform: rotate(157.5deg);
+      }
+      #status-indeterminate > div:nth-child(5) {
+        transform: rotate(202.5deg);
+      }
+      #status-indeterminate > div:nth-child(6) {
+        transform: rotate(247.5deg);
+      }
+      #status-indeterminate > div:nth-child(7) {
+        transform: rotate(292.5deg);
+      }
+      #status-indeterminate > div:nth-child(8) {
+        transform: rotate(337.5deg);
+      }
+
+      #status-notice {
+        margin: 0 100px;
+        line-height: 1.3;
+        padding: 4px 6px;
+        visibility: visible;
+      }
+    </style>
+  
+    <meta property="og:title" content="Kitchen Gun Game - Play Online for Free">
+    <meta property="og:description" content="Play Kitchen Gun Game online for free. Unblocked and available on all devices. Experience the best Kitchen Gun Game gameplay now!">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://unlockedgames.io/kitchen-gun-game/">
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": [
+    "VideoGame",
+    "SoftwareApplication"
+  ],
+  "name": "Kitchen Gun Game",
+  "description": "Play Kitchen Gun Game online for free. Unblocked and available on all devices. Experience the best Kitchen Gun Game gameplay now!",
+  "url": "https://unlockedgames.io/kitchen-gun-game/",
+  "applicationCategory": "Game",
+  "operatingSystem": "Any",
+  "genre": "Arcade",
+  "inLanguage": "en",
+  "isAccessibleForFree": true
+}</script>
+
+    <meta property="og:title" content="Kitchen Gun Game - Play Online for Free">
+    <meta property="og:description" content="Play Kitchen Gun Game online for free. Unblocked and available on all devices. Experience the best Kitchen Gun Game gameplay now!">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://unlockedgames.io/kitchen-gun-game/">
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": [
+    "VideoGame",
+    "SoftwareApplication"
+  ],
+  "name": "Kitchen Gun Game",
+  "description": "Play Kitchen Gun Game online for free. Unblocked and available on all devices. Experience the best Kitchen Gun Game gameplay now!",
+  "url": "https://unlockedgames.io/kitchen-gun-game/",
+  "applicationCategory": "Game",
+  "operatingSystem": "Any",
+  "genre": "Arcade",
+  "inLanguage": "en",
+  "isAccessibleForFree": true
+}</script>
+
+    <meta property="og:title" content="Kitchen Gun Game - Play Online for Free">
+    <meta property="og:description" content="Play Kitchen Gun Game online for free. Unblocked and available on all devices. Experience the best Kitchen Gun Game gameplay now!">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://unlockedgames.io/kitchen-gun-game/">
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": [
+    "VideoGame",
+    "SoftwareApplication"
+  ],
+  "name": "Kitchen Gun Game",
+  "description": "Play Kitchen Gun Game online for free. Unblocked and available on all devices. Experience the best Kitchen Gun Game gameplay now!",
+  "url": "https://unlockedgames.io/kitchen-gun-game/",
+  "applicationCategory": "Game",
+  "operatingSystem": "Any",
+  "genre": "Arcade",
+  "inLanguage": "en",
+  "isAccessibleForFree": true
+}</script>
+
+    <meta property="og:title" content="Kitchen Gun Game - Play Online for Free">
+    <meta property="og:description" content="Play Kitchen Gun Game online for free. Unblocked and available on all devices. Experience the best Kitchen Gun Game gameplay now!">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://unlockedgames.io/kitchen-gun-game/">
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": [
+    "VideoGame",
+    "SoftwareApplication"
+  ],
+  "name": "Kitchen Gun Game",
+  "description": "Play Kitchen Gun Game online for free. Unblocked and available on all devices. Experience the best Kitchen Gun Game gameplay now!",
+  "url": "https://unlockedgames.io/kitchen-gun-game/",
+  "applicationCategory": "Game",
+  "operatingSystem": "Any",
+  "genre": "Arcade",
+  "inLanguage": "en",
+  "isAccessibleForFree": true,
+  "author": {
+    "@type": "Person",
+    "name": "HSINI"
+  }
+}</script>
+
+    <meta property="og:title" content="Kitchen Gun Game - Play Online for Free">
+    <meta property="og:description" content="Play Kitchen Gun Game online for free. Unblocked and available on all devices. Experience the best Kitchen Gun Game gameplay now!">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://unlockedgames.io/kitchen-gun-game/">
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": [
+    "VideoGame",
+    "SoftwareApplication"
+  ],
+  "name": "Kitchen Gun Game",
+  "description": "Play Kitchen Gun Game online for free. Unblocked and available on all devices. Experience the best Kitchen Gun Game gameplay now!",
+  "url": "https://unlockedgames.io/kitchen-gun-game/",
+  "applicationCategory": "Game",
+  "operatingSystem": "Any",
+  "genre": "Arcade",
+  "inLanguage": "en",
+  "isAccessibleForFree": true,
+  "author": {
+    "@type": "Person",
+    "name": "HSINI"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "hsinidev"
+  }
+}</script>
+</head>
+  <body>
+    <canvas id="canvas">
+      HTML5 canvas appears to be unsupported in the current browser.<br />
+      Please try updating or use a different browser.
+    </canvas>
+    <div id="status">
+      <div id="status-progress" style="display: none;" oncontextmenu="event.preventDefault();"><div id="status-progress-inner"></div></div>
+      <div id="status-indeterminate" style="display: none;" oncontextmenu="event.preventDefault();">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div id="status-notice" class="godot" style="display: none;"></div>
+    </div>
+
+    <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript">
+      //<![CDATA[
+
+      var engine = new Engine();
+      var setStatusMode;
+      var setStatusNotice;
+
+      (function () {
+        const EXECUTABLE_NAME = "index";
+        const MAIN_PACK = "index.pck";
+        const INDETERMINATE_STATUS_STEP_MS = 100;
+
+        var canvas = document.getElementById("canvas");
+        var statusProgress = document.getElementById("status-progress");
+        var statusProgressInner = document.getElementById("status-progress-inner");
+        var statusIndeterminate = document.getElementById("status-indeterminate");
+        var statusNotice = document.getElementById("status-notice");
+
+        var initializing = true;
+        var statusMode = "hidden";
+
+        var animationCallbacks = [];
+        function animate(time) {
+          animationCallbacks.forEach((callback) => callback(time));
+          requestAnimationFrame(animate);
+        }
+        requestAnimationFrame(animate);
+
+        function adjustCanvasDimensions() {
+          var scale = window.devicePixelRatio || 1;
+          var width = window.innerWidth;
+          var height = window.innerHeight;
+          canvas.width = width * scale;
+          canvas.height = height * scale;
+          canvas.style.width = width + "px";
+          canvas.style.height = height + "px";
+        }
+        animationCallbacks.push(adjustCanvasDimensions);
+        adjustCanvasDimensions();
+
+        setStatusMode = function setStatusMode(mode) {
+          if (statusMode === mode || !initializing) return;
+          [statusProgress, statusIndeterminate, statusNotice].forEach((elem) => {
+            elem.style.display = "none";
+          });
+          animationCallbacks = animationCallbacks.filter(function (value) {
+            return value != animateStatusIndeterminate;
+          });
+          switch (mode) {
+            case "progress":
+              statusProgress.style.display = "block";
+              break;
+            case "indeterminate":
+              statusIndeterminate.style.display = "block";
+              animationCallbacks.push(animateStatusIndeterminate);
+              break;
+            case "notice":
+              statusNotice.style.display = "block";
+              break;
+            case "hidden":
+              break;
+            default:
+              throw new Error("Invalid status mode");
+          }
+          statusMode = mode;
+        };
+
+        function animateStatusIndeterminate(ms) {
+          var i = Math.floor((ms / INDETERMINATE_STATUS_STEP_MS) % 8);
+          if (statusIndeterminate.children[i].style.borderTopColor == "") {
+            Array.prototype.slice.call(statusIndeterminate.children).forEach((child) => {
+              child.style.borderTopColor = "";
+            });
+            statusIndeterminate.children[i].style.borderTopColor = "#dfdfdf";
+          }
+        }
+
+        setStatusNotice = function setStatusNotice(text) {
+          while (statusNotice.lastChild) {
+            statusNotice.removeChild(statusNotice.lastChild);
+          }
+          var lines = text.split("\n");
+          lines.forEach((line) => {
+            statusNotice.appendChild(document.createTextNode(line));
+            statusNotice.appendChild(document.createElement("br"));
+          });
+        };
+
+        engine.setProgressFunc((current, total) => {
+          if (total > 0) {
+            statusProgressInner.style.width = (current / total) * 100 + "%";
+            setStatusMode("progress");
+            if (current === total) {
+              // wait for progress bar animation
+              setTimeout(() => {
+                setStatusMode("indeterminate");
+              }, 500);
+            }
+          } else {
+            setStatusMode("indeterminate");
+          }
+        });
+
+        function displayFailureNotice(err) {
+          var msg = err.message || err;
+          console.error(msg);
+          setStatusNotice(msg);
+          setStatusMode("notice");
+          initializing = false;
+        }
+
+        if (!Engine.isWebGLAvailable()) {
+          displayFailureNotice("WebGL not available");
+        } else {
+          setStatusMode("indeterminate");
+          engine.setCanvas(canvas);
+          engine.startGame(EXECUTABLE_NAME, MAIN_PACK).then(() => {
+            setStatusMode("hidden");
+            initializing = false;
+          }, displayFailureNotice);
+        }
+      })();
+      //]]>
+    </script>
+  
+<!-- SEO CONTENT (Hidden) -->
+<div class="seo-generated-content" style="display:none; visibility:hidden;">
+<h1>Kitchen Gun Game Guide</h1>
+
+<h2>Game Overview</h2>
+Kitchen Gun Game is a fast-paced, action-packed browser game where players control a kitchen appliance that fires kitchen utensils at enemies to destroy them. The game offers a unique blend of strategy and skill, making it an engaging experience for players of all ages.
+
+<p>The objective of the game is simple: destroy as many enemies as possible while avoiding taking damage from their own attacks. Players can upgrade their appliance with new weapons and abilities, unlocking new levels and challenges along the way.</p>
+
+<h2>How to Play</h2>
+To play Kitchen Gun Game, follow these steps:
+• Open your browser and navigate to <a href="Kitchen Gun Game.html">Kitchen Gun Game</a>
+• Control your kitchen appliance by using the mouse or keyboard to aim and fire at enemies
+• Use different types of utensils, such as knives, spatulas, and whisks, to attack and destroy enemies
+• Upgrade your appliance with new weapons and abilities as you progress through levels
+
+<h3>Controls</h3>
+The controls for Kitchen Gun Game are intuitive:
+• Mouse: Control the camera and mouse movement
+• Keyboard: Control the appliance's movements and firing options
+• Spacebar: Fire a utensil at an enemy (default attack)
+• Shift key: Upgrade the appliance's abilities (default upgrade)
+
+<p>Some levels may require you to use specific techniques, such as dodging enemies or using certain utensils in creative ways. Practice makes perfect, so don't be discouraged if you die a few times – it's all part of the learning process!</p>
+
+<h2>Tips and Tricks for Success</h2>
+Here are some tips to help you become a Kitchen Gun Game master:
+• Pay attention to enemy patterns and behaviors to anticipate their attacks
+• Use your surroundings to your advantage, such as using obstacles or terrain to block enemies
+• Experiment with different utensil combinations to find the most effective strategy
+• Upgrade your appliance regularly to access new abilities and improve its performance
+
+<h3>Why You Should Play It</h3>
+Kitchen Gun Game is an addictive and entertaining game that offers a unique blend of action, strategy, and skill. Here are just a few reasons why you should give it a try:
+• It's easy to learn but difficult to master – this makes it perfect for players of all ages and skill levels
+• The game is highly replayable, with new challenges and levels waiting to be discovered
+• The game's colorful and engaging graphics make it a pleasure to play, with a fun and lively atmosphere that will keep you entertained for hours.
+• It's free to play, with no ads or in-game purchases – making it an excellent choice for players on a budget.
+</div>
+<script>
+    // Silently block specific Live Server reload triggers if possible
+    
+</script>
+</body>
+</html>
